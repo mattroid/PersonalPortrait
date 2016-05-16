@@ -11,9 +11,11 @@ I'm using a web cam and am running TinCam on windows to capture images and write
 # Facial recognition 
 
 I used the example code from microsoft to get started
-https://github.com/Microsoft/ProjectOxford-ClientSDK/blob/master/Emotion/Python/Jupyter%20Notebook/Emotion%20Analysis%20Example.ipynb
+
+[https://github.com/Microsoft/ProjectOxford-ClientSDK/blob/master/Emotion/Python/Jupyter%20Notebook/Emotion%20Analysis%20Example.ipynb]
 
 # Docker getting started
 
 docker build -t matto/portrait .
+
 docker run --name cv_notebook -d -p 443:8888 -v C:\Users\<username>\PersonalPortrait:/data -v C:\Users\<username>\Pictures:/images -e "PASSWORD=password" matto/portrait
