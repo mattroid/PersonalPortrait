@@ -5,7 +5,7 @@ run apt-get update
 RUN apt-get remove python3-requests -y
 RUN cd /root; git clone https://github.com/kennethreitz/requests.git; cd requests; python3 setup.py install
 
-ENV password=password
+ENV PASSWORD password
 
 # dependency so we can watch the file system for new files
 RUN pip install watchdog
