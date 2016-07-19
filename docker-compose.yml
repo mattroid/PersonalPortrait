@@ -5,16 +5,18 @@ node:
   ports:
     - "8080:9966"
     - "35729:35729"
-  expose:
-    - "9966"
   command: npm run start
+  env_file:
+    - ./common.env
 
 notebook:
   image: matto/portrait
   volumes:
-    - ./captures:/images
+    - ./images:/images
     - ./data:/data
   links:
     - node:portrait-service
   ports:
     - "443:8888"
+  env_file:
+    - ./common.env
