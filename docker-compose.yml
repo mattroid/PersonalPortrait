@@ -4,6 +4,8 @@ node:
     - "8080:9966"
     - "35729:35729"
   command: npm run start
+  env_file:
+    - ./common.env
 
 notebook:
   image: matto/portrait
@@ -14,3 +16,5 @@ notebook:
     - node
   ports:
     - "443:8888"
+  env_file:
+    - ./common.env
