@@ -1,20 +1,16 @@
 node:
   image: matto/color-wander
-  volumes:
-    - node:/usr/src/app
   ports:
     - "8080:9966"
     - "35729:35729"
-  expose:
-    - "9966"
   command: npm run start
 
 notebook:
   image: matto/portrait
   volumes:
-    - ./captures:/images
+    - ./images:/images
     - ./data:/data
   links:
-    - node:portrait-service
+    - node
   ports:
     - "443:8888"
